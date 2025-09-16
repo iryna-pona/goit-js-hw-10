@@ -16,6 +16,8 @@ const secondsEl = document.querySelector("[data-seconds]");
 let userSelectedDate = null;
 let timerId = null;
 
+startBtn.disabled = true;
+
 const options = {
     enableTime: true,
     time_24hr: true,
@@ -66,6 +68,7 @@ startBtn.addEventListener("click", () => {
 
     startBtn.disabled = true;
     input.disabled = true;
+    input.value = '';
 
     timerId = setInterval(() => {
       const nowDate = new Date();
